@@ -9,22 +9,48 @@
 </head>
 
 <body>
-    <div id="app">Loading…</div>
-    <nav>
-        <a>Home</a>
-        <a>Search</a>
-        <a>Genre</a>
-        <a>Add Movie</a>
-        <a>Notifications</a>
-        <a>Profile</a>
-        <a>About Us</a>
-    </nav>
-    
-    <h1>Flop Finder</h1>
-    <h2>Brought to you by FrontEnders</h2>
-    <div>
-        <button id="genre"></button>
-    </div>
+    <header>
+        <div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Search</a></li>
+                    <li><a href="HomeGenrePage.html">Genre</a></li>
+                    <li><a href="#">Add Movie</a></li>
+                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><button id="signin" style="background-color: #DB2B39; stroke:white">Sign in</button></li>
+                    <li><button id="register" style="background-color: #DB2B39; stroke:white">Register</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <div class="content">
+            <h1>Flop Finder</h1>
+        </div>
+        <div class="subcontent">
+            <h2>Brought to you by FrontEnders</h2>
+        </div>
+    </section>
+
+    <section>
+        <div class="buttons">
+            <button id="genre">Genre</button>
+            <button id="actors">Actor/Actress</button>
+            <button id="year">Year</button>
+            <button id="rating">Rating</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="search">
+            <input id="searchBar" type="text" name="search" placeholder="Search Movies">
+        </div>
+    </section>
+
     <script src="/js/app.js" defer></script>
 </body>
 
