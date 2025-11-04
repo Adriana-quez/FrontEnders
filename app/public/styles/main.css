@@ -32,12 +32,13 @@ body {
     color: #440381;
     text-align: center;
     font-size: 15px;
+    font-weight: normal;
 }
 
 nav {
     text-align: right;
     background-color: #440381; 
-    padding: 10px 0;
+    padding: 10px 20px;
 }
 
 .nav-links li {
@@ -56,9 +57,14 @@ nav {
     background-color: #D5AEFA;
 }
 
-.buttons {
+.filterButtons {
     text-align: center;
-    padding: 20px;
+    padding: 20px 100px;
+}
+
+.filter-links li {
+    display: inline;
+    padding-right: 20px;
 }
 
 button {
@@ -66,12 +72,14 @@ button {
     background-color: #D5AEFA;
     stroke: #440381;
     border-radius: 5px;
+    padding: 10px;
     width: 140px;
 }
 
 .search {
     text-align: center;
     align-items: center;
+    padding: 20px;
 }
 
 .search input[type="text"] {
@@ -79,4 +87,16 @@ button {
     margin-right: 10px;
     font-size: 17px;
     border-radius: 4px;
+    width: 800px;
+}
+
+.footer-links li {
+    display: block;
+    padding-right: 20px;
+}
+
+.footer-links li a {
+    color: white;
+    padding: 5px;
+    display: block;
 }
