@@ -16,14 +16,15 @@ app.get("/movieInfo", (req, res) => {
   console.log("Received query string:", req.query);
   let movieID = req.query.movie_id;
   console.log("Movie Title:", movieID);
+  console.log(`${baseUrl}movie/${movieID}?api_key=${apiKey}`);
 
-  axios(`${baseUrl}/movie/${movieID}?api_key=${apiKey}`).then(response => {
+  axios(`${baseUrl}movie/${movieID}?api_key=${apiKey}&language=en-US`).then(response => {
     console.log("API response received:", response.data);
     res.json(response.data);
   }).catch(error => {
     console.log("Error when requesting from API", error);
     res.status(error.response.status).json({"error": error.response.data["message"]});
-  });;
+  });
 });
 
 app.listen(port, hostname, () => {
