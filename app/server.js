@@ -19,9 +19,10 @@ app.get("/movieInfo", (req, res) => {
 
   axios(`${baseUrl}/movie/${movieID}?api_key=${apiKey}`).then(response => {
     console.log("API response received:", response.data);
-    //res.json(response.data);
+    res.json(response.data);
   }).catch(error => {
     console.log("Error when requesting from API", error);
+    res.status(error.response.status).json({"error": error.response.data["message"]});
   });;
 });
 
