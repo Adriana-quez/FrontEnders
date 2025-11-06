@@ -12,18 +12,19 @@ app.get("/", (req, res) => {
   res.status(200).send();
 });
 
-app.get("/movieInfo", (req, res) => {
-  console.log("Received query string:", req.query);
-  let movieID = req.query.movie_id;
-  console.log("Movie Title:", movieID);
-  console.log(`${baseUrl}movie/${movieID}?api_key=${apiKey}`);
+app.get("/movieInfo/:movie_id", (req, res) => {
+  //console.log("Movie ID:", req.params.movie_id);
+  let movieID = req.params.movie_id; // int ID of movie
+  console.log("Movie ID:", movieID);
+  console.log(`${baseUrl}/movie/${movieID}?api_key=${apiKey}`);
 
-  axios(`${baseUrl}movie/${movieID}?api_key=${apiKey}&language=en-US`).then(response => {
+  // axios to call TMDB api with movie id in english
+  axios(`${baseUrl}/movie/${movieID}?api_key=${apiKey}&language=en-US`).then(response => {
     console.log("API response received:", response.data);
-    res.json(response.data);
+    res.json(response.data); // send json blob of movie data
   }).catch(error => {
     console.log("Error when requesting from API", error);
-    res.status(error.response.status).json({"error": error.response.data["message"]});
+    res.status(error.response.status).json({"error": error.response.data["message"]}); // error if anything goes wrong
   });
 });
 
